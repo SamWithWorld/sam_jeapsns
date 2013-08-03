@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block name1 %}
+<b>I am name1</b>
+{% endblock%}
+
+{% block content %}
+<form  action="" method='POST'>
+
+    {% csrf_token %}
+    <table css=''>
+        {{f}}
+    </table>
+    <input class="button glow button-rounded button-flat-primary" type='submit' value='发送'>
+</form>
+
+<hr>
+
+{%for i in l1%}
+<li>{{i.name}}--{{i.content}}<a class='btn' href='/helloedit?id={{i.id}}'>编辑</a> <a class='btn' href='/hellodel?id={{i.id}}'>删除</a></li>
+{% endfor %}
+
+{% endblock %}

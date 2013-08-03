@@ -1,0 +1,72 @@
+<meta  content="text/html; charset=UTF-8">
+<link href='/static/bootstrap/css/bootstrap.min.css' rel="stylesheet">
+
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <a class="brand" href="#">Uliweb Zone</a>
+      <div class="nav-collapse">
+        
+<ul class="nav">
+    
+<li><a href="/"><span>首页</span></a></li><li><a href="/forum"><span>论坛</span></a></li><li class="active"><a href="/tutorial"><span>教程</span></a></li><li><a href="/class"><span>课程</span></a></li><li><a href="/user/view"><span>管理</span></a></li><li><a href="/about"><span>关于</span></a></li>
+
+
+
+</ul>
+
+      
+<style>
+#userinfo.btn-toolbar {margin-top:0;margin-bottom:0;font-size:14px;}
+#userinfo.btn-toolbar a{vertical-align:middle;}
+#userinfo img {
+-webkit-border-radius: 3px;
+   -moz-border-radius: 3px;
+        border-radius: 3px;
+}
+#userinfo [class^="icon-"], #userinfo [class*=" icon-"], #userinfo [class^="icon-"]:hover, #userinfo [class*=" icon-"]:hover{
+    vertical-align:middle;
+    margin-bottom:3px;
+}
+</style>
+    
+
+    
+        <p class="pull-right user_info">
+        <!--     <a href="/login">登录</a> | <a href="/register">注册</a>-->
+
+        {%if name %}
+         欢迎 {{ name }} 来到本网站
+        
+         <a href ="/accounts/logout/?next=/"> 退出 </a>
+        
+        {% else %}
+        <a href ="/accounts/login/?next=/"> 登录 </a>
+        <a href ="/accounts/register/?next=/"> 注册 </a>
+        {% endif %}    
+
+        </p>
+    
+
+    
+
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+</div>
+
+<div style='padding:100px 5px 15px 20px;'>
+{% block content %}
+{% endblock %}
+</div>
+
+
+<div style='padding:100px 5px 15px 20px;'>
+{% block name1 %}
+{% endblock %}
+</div>
